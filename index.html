@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Layouts</title>
+    <link href="index.css" type="text/css" rel="stylesheet" />
+    <script>
+      let count = 0;
+      const sponsors = ["sponsor1","sponsor2","sponsor3"];
+
+      document.addEventListener('DOMContentLoaded',_=>{
+        const item = document.querySelector('.item');
+        for(let c=0;c<5;c++)
+          document.querySelector('.articles').innerHTML += item.outerHTML;
+
+        document.querySelectorAll('.item').forEach(item=>item.addEventListener('click',_=>document.querySelector('body').className=sponsors[(++count)%sponsors.length]));
+      });
+    </script>
+  </head>
+  <body class="sponsor1">
+    <div class="articles">
+      <div class="item">
+        <h2>Project</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+      </div>
+    </div>
+  </body>
+</html>
